@@ -1,8 +1,21 @@
 class Solution {
     public int strStr(String haystack, String needle) {
-        if(needle==\ \ || haystack==\ \){
+        //  if(needle==\\ || haystack==\\){
+        //     return -1;
+        // }
+        // return (haystack.indexOf(needle));
+
+
+        if (haystack.length() < needle.length()) {
             return -1;
         }
-        return (haystack.indexOf(needle));
+        
+        for (int i = 0; i <= haystack.length() - needle.length(); i++) {
+            if (haystack.substring(i, i + needle.length()).equals(needle)) {
+                return i;
+            }
+        }
+        
+        return -1;  
     }
 }
